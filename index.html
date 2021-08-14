@@ -5,17 +5,29 @@ Magic 8 Ball
 </title>
 
 <main>
+
+    <body>
 <p> renew the website  </p>
 
-    <p id = 'demo'> </p>
 
-    document.getElementById('demo').innerHTML =
+<div id="console">
+
+
     <script>
-
         //The maximum is exclusive and the minimum is inclusive
-
+        if (window.console) console = {
+            log: function(){
+                var output='',
+                    console=document.getElementById('console');
+                for (var i=0;i<arguments.length;i++) {
+                    output+=arguments[i]+' ';
+                }
+                console.innerText+=output+"\n";
+            }
+        };
 
         let future = Math.floor(Math.random() * 10);
+
         switch (future) {
             case 1:
                 console.log('Yes');
@@ -54,6 +66,15 @@ Magic 8 Ball
         }
     </script>
 
+</div>
+
+
+
+
+
+
+
+    </body>
 </main>
 
 
